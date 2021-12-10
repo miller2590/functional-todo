@@ -18,14 +18,18 @@ function TodoApp() {
     setTodos([...todos, { id: 4, task: newTodoText, completed: false }]);
   };
   return (
-    <Paper elevation={3}>
+    <Paper elevation={0}>
       <AppBar position="static" color="primary" enableColorOnDark>
         <Toolbar>
           <Typography color="inherit">Todos With Hooks</Typography>
         </Toolbar>
       </AppBar>
-      <TodoForm addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <Grid container justifyContent="center" style={{ marginTop: "1rem" }}>
+        <Grid item xs={11} md={8} lg={4}>
+          <TodoForm addTodo={addTodo} />
+          <TodoList todos={todos} />
+        </Grid>
+      </Grid>
     </Paper>
   );
 }
