@@ -9,7 +9,8 @@ import { Toolbar } from "@mui/material";
 import { Grid } from "@mui/material";
 
 function TodoApp() {
-  const initialTodos = JSON.parse(window.localStorage.getItem("todos")) || "[]";
+  const initialTodos =
+    JSON.parse(window.localStorage.getItem("todos")) || `${[]}`;
   const { todos, removeTodo, addTodo, toggleTodo, editTodo } =
     useTodoState(initialTodos);
 
